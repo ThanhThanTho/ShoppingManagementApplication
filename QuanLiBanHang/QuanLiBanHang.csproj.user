@@ -7,6 +7,9 @@
     <Compile Update="KhachHang.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="MatHang.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="QuanLy.cs">
       <SubType>Form</SubType>
     </Compile>

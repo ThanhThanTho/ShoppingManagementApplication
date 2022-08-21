@@ -106,5 +106,13 @@ namespace QuanLiBanHang
         {
             button1.BackColor = Color.LightBlue;
         }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            MatHang a = new MatHang();
+            a.ShowDialog();
+            this.Close();
+        }
     }
 }
