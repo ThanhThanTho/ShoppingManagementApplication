@@ -20,7 +20,7 @@ namespace QuanLiBanHang
 
         private void DangNhap_Load(object sender, EventArgs e)
         {
-            Image myimage = new Bitmap(@"..\..\..\Picture\LogIn.jpg");
+            Image myimage = new Bitmap(@"..\..\..\Picture\DangNhap.jpg");
             this.BackgroundImage = myimage;
             this.BackgroundImageLayout = ImageLayout.Stretch;
             textBox1.Focus();

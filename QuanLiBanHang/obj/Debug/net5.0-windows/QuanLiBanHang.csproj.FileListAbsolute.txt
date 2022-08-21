@@ -5,7 +5,6 @@ D:\VisualStudio\Project_BL5\QuanLiBanHang\bin\Debug\net5.0-windows\QuanLiBanHang
 D:\VisualStudio\Project_BL5\QuanLiBanHang\bin\Debug\net5.0-windows\QuanLiBanHang.dll
 D:\VisualStudio\Project_BL5\QuanLiBanHang\bin\Debug\net5.0-windows\ref\QuanLiBanHang.dll
 D:\VisualStudio\Project_BL5\QuanLiBanHang\bin\Debug\net5.0-windows\QuanLiBanHang.pdb
-D:\VisualStudio\Project_BL5\QuanLiBanHang\obj\Debug\net5.0-windows\QuanLiBanHang.csproj.AssemblyReference.cache
 D:\VisualStudio\Project_BL5\QuanLiBanHang\obj\Debug\net5.0-windows\QuanLiBanHang.DangNhap.resources
 D:\VisualStudio\Project_BL5\QuanLiBanHang\obj\Debug\net5.0-windows\QuanLiBanHang.csproj.GenerateResource.cache
 D:\VisualStudio\Project_BL5\QuanLiBanHang\obj\Debug\net5.0-windows\QuanLiBanHang.GeneratedMSBuildEditorConfig.editorconfig
@@ -66,3 +65,5 @@ D:\VisualStudio\Project_BL5\QuanLiBanHang\bin\Debug\net5.0-windows\runtimes\win\
 D:\VisualStudio\Project_BL5\QuanLiBanHang\obj\Debug\net5.0-windows\QuanLiBanHang.csproj.CopyComplete
 D:\VisualStudio\Project_BL5\QuanLiBanHang\obj\Debug\net5.0-windows\QuanLiBanHang.QuanLy.resources
 D:\VisualStudio\Project_BL5\QuanLiBanHang\obj\Debug\net5.0-windows\QuanLiBanHang.Properties.Resources.resources
+D:\VisualStudio\Project_BL5\QuanLiBanHang\obj\Debug\net5.0-windows\QuanLiBanHang.KhachHang.resources
+D:\VisualStudio\Project_BL5\QuanLiBanHang\obj\Debug\net5.0-windows\QuanLiBanHang.csproj.AssemblyReference.cache

@@ -56,6 +56,7 @@ namespace QuanLiBanHang
             this.label1.Size = new System.Drawing.Size(241, 32);
             this.label1.TabIndex = 1;
             this.label1.Text = "Cập nhật khách hàng";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             this.label1.MouseHover += new System.EventHandler(this.label1_MouseHover);
             // 
             // label2
@@ -98,9 +99,10 @@ namespace QuanLiBanHang
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(126, 43);
             this.button1.TabIndex = 5;
-            this.button1.Text = "Trở về";
+            this.button1.Text = "Đăng Xuất";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.button1.MouseHover += new System.EventHandler(this.button1_MouseHover);
             // 
             // QuanLy
             // 
@@ -114,7 +116,10 @@ namespace QuanLiBanHang
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pictureBox1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.MaximizeBox = false;
             this.Name = "QuanLy";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Chương trình quản lý mua và bán hàng";
             this.Load += new System.EventHandler(this.QuanLy_Load);
             this.MouseHover += new System.EventHandler(this.QuanLy_MouseHover);

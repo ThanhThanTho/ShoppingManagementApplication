@@ -23,6 +23,7 @@ namespace QuanLiBanHang
             label2.BackColor = this.BackColor;
             label3.BackColor = this.BackColor;
             label4.BackColor = this.BackColor;
+            button1.BackColor = Color.Orange;
         }
 
         private void pictureBox1_MouseHover(object sender, EventArgs e)
@@ -31,13 +32,14 @@ namespace QuanLiBanHang
             label2.BackColor = this.BackColor;
             label3.BackColor = this.BackColor;
             label4.BackColor = this.BackColor;
+            button1.BackColor = Color.Orange;
         }
 
         private void QuanLy_Load(object sender, EventArgs e)
         {
             pictureBox1.Image = Image.FromFile(@"..\..\..\Picture\QuanLyBG.jpg");
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
-            button1.BackColor = this.BackColor;
+            button1.BackColor = Color.Orange;
         }
 
         private void QuanLy_MouseHover(object sender, EventArgs e)
@@ -46,6 +48,7 @@ namespace QuanLiBanHang
             label2.BackColor = this.BackColor;
             label3.BackColor = this.BackColor;
             label4.BackColor = this.BackColor;
+            button1.BackColor = Color.Orange;
         }
 
         private void label2_MouseHover(object sender, EventArgs e)
@@ -54,6 +57,7 @@ namespace QuanLiBanHang
             label1.BackColor = this.BackColor;
             label3.BackColor = this.BackColor;
             label4.BackColor = this.BackColor;
+            button1.BackColor = Color.Orange;
         }
 
         private void label3_MouseHover(object sender, EventArgs e)
@@ -62,6 +66,7 @@ namespace QuanLiBanHang
             label2.BackColor = this.BackColor;
             label1.BackColor = this.BackColor;
             label4.BackColor = this.BackColor;
+            button1.BackColor = Color.Orange;
         }
 
         private void label4_MouseHover(object sender, EventArgs e)
@@ -70,6 +75,7 @@ namespace QuanLiBanHang
             label2.BackColor = this.BackColor;
             label3.BackColor = this.BackColor;
             label1.BackColor = this.BackColor;
+            button1.BackColor = Color.Orange;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -78,13 +84,27 @@ namespace QuanLiBanHang
             label2.BackColor = this.BackColor;
             label3.BackColor = this.BackColor;
             label4.BackColor = this.BackColor;
-            if (MessageBox.Show("Bạn có chắc muốn trở về màn hình đăng nhập?", "Alert", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            button1.BackColor = Color.Orange;
+            if (MessageBox.Show("Bạn có chắc muốn đăng xuất?", "Alert", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
                 this.Hide();
                 DangNhap a = new DangNhap();
                 a.ShowDialog();
                 this.Close();
             }
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            KhachHang a = new KhachHang();
+            a.ShowDialog();
+            this.Close();
+        }
+
+        private void button1_MouseHover(object sender, EventArgs e)
+        {
+            button1.BackColor = Color.LightBlue;
         }
     }
 }
