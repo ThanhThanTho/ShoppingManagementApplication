@@ -114,5 +114,13 @@ namespace QuanLiBanHang
             a.ShowDialog();
             this.Close();
         }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            DatHang a = new DatHang();
+            a.ShowDialog();
+            this.Close();
+        }
     }
 }

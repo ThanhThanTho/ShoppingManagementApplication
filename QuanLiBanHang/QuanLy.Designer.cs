@@ -80,6 +80,7 @@ namespace QuanLiBanHang
             this.label3.Size = new System.Drawing.Size(169, 32);
             this.label3.TabIndex = 3;
             this.label3.Text = "Xử lí bán hàng";
+            this.label3.Click += new System.EventHandler(this.label3_Click);
             this.label3.MouseHover += new System.EventHandler(this.label3_MouseHover);
             // 
             // label4

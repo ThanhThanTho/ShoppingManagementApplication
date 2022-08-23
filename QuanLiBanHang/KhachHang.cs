@@ -194,10 +194,13 @@ namespace QuanLiBanHang
 
         private void buttonTroVe_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            QuanLy a = new QuanLy();
-            a.ShowDialog();
-            this.Close();
+            if (MessageBox.Show("Bạn có chắc muốn trở về?", "Alert", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                this.Hide();
+                QuanLy a = new QuanLy();
+                a.ShowDialog();
+                this.Close();
+            }
         }
     }
 }
