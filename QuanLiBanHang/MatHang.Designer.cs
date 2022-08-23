@@ -31,14 +31,14 @@ namespace QuanLiBanHang
         {
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.textBoxMa = new System.Windows.Forms.TextBox();
-            this.textBoxTen = new System.Windows.Forms.TextBox();
-            this.textBoxGiaBan = new System.Windows.Forms.TextBox();
             this.comboBoxDonVi = new System.Windows.Forms.ComboBox();
+            this.textBoxGiaBan = new System.Windows.Forms.TextBox();
+            this.textBoxTen = new System.Windows.Forms.TextBox();
+            this.textBoxMa = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.buttonMoi = new System.Windows.Forms.Button();
             this.buttonThem = new System.Windows.Forms.Button();
             this.buttonSua = new System.Windows.Forms.Button();
@@ -80,35 +80,38 @@ namespace QuanLiBanHang
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông tin mặt hàng cập nhật";
             // 
-            // label2
+            // comboBoxDonVi
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(24, 50);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(86, 25);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "Mã hàng:";
+            this.comboBoxDonVi.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.comboBoxDonVi.FormattingEnabled = true;
+            this.comboBoxDonVi.Location = new System.Drawing.Point(538, 50);
+            this.comboBoxDonVi.Name = "comboBoxDonVi";
+            this.comboBoxDonVi.Size = new System.Drawing.Size(182, 33);
+            this.comboBoxDonVi.TabIndex = 7;
             // 
-            // label3
+            // textBoxGiaBan
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label3.Location = new System.Drawing.Point(24, 128);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(87, 25);
-            this.label3.TabIndex = 1;
-            this.label3.Text = "Tên hàng:";
+            this.textBoxGiaBan.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.textBoxGiaBan.Location = new System.Drawing.Point(513, 128);
+            this.textBoxGiaBan.Name = "textBoxGiaBan";
+            this.textBoxGiaBan.Size = new System.Drawing.Size(207, 31);
+            this.textBoxGiaBan.TabIndex = 6;
             // 
-            // label4
+            // textBoxTen
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label4.Location = new System.Drawing.Point(411, 50);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(103, 25);
-            this.label4.TabIndex = 2;
-            this.label4.Text = "Đơn vị tính:";
+            this.textBoxTen.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.textBoxTen.Location = new System.Drawing.Point(132, 128);
+            this.textBoxTen.Name = "textBoxTen";
+            this.textBoxTen.Size = new System.Drawing.Size(200, 31);
+            this.textBoxTen.TabIndex = 5;
+            // 
+            // textBoxMa
+            // 
+            this.textBoxMa.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.textBoxMa.Location = new System.Drawing.Point(132, 50);
+            this.textBoxMa.Name = "textBoxMa";
+            this.textBoxMa.Size = new System.Drawing.Size(200, 31);
+            this.textBoxMa.TabIndex = 4;
             // 
             // label5
             // 
@@ -120,38 +123,35 @@ namespace QuanLiBanHang
             this.label5.TabIndex = 3;
             this.label5.Text = "Giá bán:";
             // 
-            // textBoxMa
+            // label4
             // 
-            this.textBoxMa.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBoxMa.Location = new System.Drawing.Point(132, 50);
-            this.textBoxMa.Name = "textBoxMa";
-            this.textBoxMa.Size = new System.Drawing.Size(200, 31);
-            this.textBoxMa.TabIndex = 4;
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label4.Location = new System.Drawing.Point(411, 50);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(103, 25);
+            this.label4.TabIndex = 2;
+            this.label4.Text = "Đơn vị tính:";
             // 
-            // textBoxTen
+            // label3
             // 
-            this.textBoxTen.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBoxTen.Location = new System.Drawing.Point(132, 128);
-            this.textBoxTen.Name = "textBoxTen";
-            this.textBoxTen.Size = new System.Drawing.Size(200, 31);
-            this.textBoxTen.TabIndex = 5;
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label3.Location = new System.Drawing.Point(24, 128);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(87, 25);
+            this.label3.TabIndex = 1;
+            this.label3.Text = "Tên hàng:";
             // 
-            // textBoxGiaBan
+            // label2
             // 
-            this.textBoxGiaBan.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBoxGiaBan.Location = new System.Drawing.Point(513, 128);
-            this.textBoxGiaBan.Name = "textBoxGiaBan";
-            this.textBoxGiaBan.Size = new System.Drawing.Size(207, 31);
-            this.textBoxGiaBan.TabIndex = 6;
-            // 
-            // comboBoxDonVi
-            // 
-            this.comboBoxDonVi.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.comboBoxDonVi.FormattingEnabled = true;
-            this.comboBoxDonVi.Location = new System.Drawing.Point(538, 50);
-            this.comboBoxDonVi.Name = "comboBoxDonVi";
-            this.comboBoxDonVi.Size = new System.Drawing.Size(182, 33);
-            this.comboBoxDonVi.TabIndex = 7;
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label2.Location = new System.Drawing.Point(24, 50);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(86, 25);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "Mã hàng:";
             // 
             // buttonMoi
             // 
@@ -161,6 +161,7 @@ namespace QuanLiBanHang
             this.buttonMoi.TabIndex = 2;
             this.buttonMoi.Text = "Mới";
             this.buttonMoi.UseVisualStyleBackColor = true;
+            this.buttonMoi.Click += new System.EventHandler(this.buttonMoi_Click);
             // 
             // buttonThem
             // 
@@ -170,33 +171,40 @@ namespace QuanLiBanHang
             this.buttonThem.TabIndex = 3;
             this.buttonThem.Text = "Thêm";
             this.buttonThem.UseVisualStyleBackColor = true;
+            this.buttonThem.Click += new System.EventHandler(this.buttonThem_Click);
             // 
             // buttonSua
             // 
+            this.buttonSua.Enabled = false;
             this.buttonSua.Location = new System.Drawing.Point(280, 311);
             this.buttonSua.Name = "buttonSua";
             this.buttonSua.Size = new System.Drawing.Size(112, 34);
             this.buttonSua.TabIndex = 4;
             this.buttonSua.Text = "Sửa";
             this.buttonSua.UseVisualStyleBackColor = true;
+            this.buttonSua.Click += new System.EventHandler(this.buttonSua_Click);
             // 
             // buttonCapNhat
             // 
+            this.buttonCapNhat.Enabled = false;
             this.buttonCapNhat.Location = new System.Drawing.Point(414, 311);
             this.buttonCapNhat.Name = "buttonCapNhat";
             this.buttonCapNhat.Size = new System.Drawing.Size(112, 34);
             this.buttonCapNhat.TabIndex = 5;
             this.buttonCapNhat.Text = "Cập Nhật";
             this.buttonCapNhat.UseVisualStyleBackColor = true;
+            this.buttonCapNhat.Click += new System.EventHandler(this.buttonCapNhat_Click);
             // 
             // buttonXoa
             // 
+            this.buttonXoa.Enabled = false;
             this.buttonXoa.Location = new System.Drawing.Point(550, 311);
             this.buttonXoa.Name = "buttonXoa";
             this.buttonXoa.Size = new System.Drawing.Size(112, 34);
             this.buttonXoa.TabIndex = 6;
             this.buttonXoa.Text = "Xóa";
             this.buttonXoa.UseVisualStyleBackColor = true;
+            this.buttonXoa.Click += new System.EventHandler(this.buttonXoa_Click);
             // 
             // buttonTroVe
             // 
@@ -206,6 +214,7 @@ namespace QuanLiBanHang
             this.buttonTroVe.TabIndex = 7;
             this.buttonTroVe.Text = "Trở về";
             this.buttonTroVe.UseVisualStyleBackColor = true;
+            this.buttonTroVe.Click += new System.EventHandler(this.buttonTroVe_Click);
             // 
             // groupBox2
             // 
@@ -227,6 +236,7 @@ namespace QuanLiBanHang
             this.dataGridView1.RowTemplate.Height = 33;
             this.dataGridView1.Size = new System.Drawing.Size(769, 258);
             this.dataGridView1.TabIndex = 0;
+            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
             // MatHang
             // 
@@ -246,6 +256,7 @@ namespace QuanLiBanHang
             this.Name = "MatHang";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MatHang";
+            this.Load += new System.EventHandler(this.MatHang_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);

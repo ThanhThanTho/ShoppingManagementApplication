@@ -24,8 +24,8 @@ namespace QuanLiBanHang
             dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dataGridView1.MultiSelect = false;
             dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            this.BackColor = Color.DarkOrange;
             loadData();
+            this.BackColor = Color.DarkOrange;
             dataGridView1.ClearSelection();
 
             textBoxMa.Text = "(không cần điền)";
@@ -164,6 +164,7 @@ namespace QuanLiBanHang
                         MessageBox.Show("Cập nhật thành công");
                         loadData();
                     }
+                    else loadData();
                 }
             }
             else loadData();
