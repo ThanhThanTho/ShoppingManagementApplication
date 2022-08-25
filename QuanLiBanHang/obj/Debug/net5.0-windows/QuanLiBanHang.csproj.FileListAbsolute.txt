@@ -68,3 +68,5 @@ D:\VisualStudio\Project_BL5\QuanLiBanHang\obj\Debug\net5.0-windows\QuanLiBanHang
 D:\VisualStudio\Project_BL5\QuanLiBanHang\obj\Debug\net5.0-windows\QuanLiBanHang.KhachHang.resources
 D:\VisualStudio\Project_BL5\QuanLiBanHang\obj\Debug\net5.0-windows\QuanLiBanHang.MatHang.resources
 D:\VisualStudio\Project_BL5\QuanLiBanHang\obj\Debug\net5.0-windows\QuanLiBanHang.DatHang.resources
+D:\VisualStudio\Project_BL5\QuanLiBanHang\obj\Debug\net5.0-windows\QuanLiBanHang.csproj.AssemblyReference.cache
+D:\VisualStudio\Project_BL5\QuanLiBanHang\obj\Debug\net5.0-windows\QuanLiBanHang.LichSu.resources

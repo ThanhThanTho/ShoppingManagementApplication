@@ -92,6 +92,7 @@ namespace QuanLiBanHang
             this.label4.Size = new System.Drawing.Size(206, 32);
             this.label4.TabIndex = 4;
             this.label4.Text = "Báo cáo bán hàng";
+            this.label4.Click += new System.EventHandler(this.label4_Click);
             this.label4.MouseHover += new System.EventHandler(this.label4_MouseHover);
             // 
             // button1

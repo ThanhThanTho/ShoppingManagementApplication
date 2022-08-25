@@ -95,6 +95,10 @@ namespace QuanLiBanHang
             {
                 MessageBox.Show("Giá bán không hợp lệ");
             }
+            else if (isExist(textBoxMa.Text))
+            {
+                MessageBox.Show("Mã hàng đã tồn tại, hãy thay đổi mã hàng");
+            }
             else
             {
                 using (MyOrderContext context = new MyOrderContext())
@@ -113,6 +117,20 @@ namespace QuanLiBanHang
                     else loadData();
                 }
             }
+        }
+
+        public bool isExist(string maMH)
+        {
+            MyOrderContext context = new MyOrderContext();
+            var data = context.TblMatHangs.ToList();
+            foreach (TblMatHang item in data)
+            {
+                if (item.MaHang.Equals(maMH))
+                {
+                    return true;
+                }
+            }
+            return false;
         }
 
         private void buttonSua_Click(object sender, EventArgs e)
@@ -178,10 +196,13 @@ namespace QuanLiBanHang
 
         private void buttonTroVe_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            QuanLy a = new QuanLy();
-            a.ShowDialog();
-            this.Close();
+            if (MessageBox.Show("Bạn có chắc muốn trở về?", "Alert", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                this.Hide();
+                QuanLy a = new QuanLy();
+                a.ShowDialog();
+                this.Close();
+            }
         }
     }
 }

@@ -10,6 +10,9 @@
     <Compile Update="KhachHang.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="LichSu.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="MatHang.cs">
       <SubType>Form</SubType>
     </Compile>

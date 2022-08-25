@@ -178,12 +178,23 @@ namespace QuanLiBanHang
                 {
                     TblKhachHang pro = context.TblKhachHangs.SingleOrDefault(
                         item => item.MaKh == textBoxMa.Text);
-                    context.TblKhachHangs.Remove(pro);
-                    if (context.SaveChanges() > 0)
+                    var dataHD = context.TblHoadons.ToList().
+                        Where(p => p.MaKh.Equals(pro.MaKh)).ToList();
+                    if (dataHD.Count>0)
                     {
-                        MessageBox.Show("Xóa thành công");
-                        loadData();
+                        MessageBox.Show("Khách hàng này đã có hóa đơn, không thể xóa được");
                     }
+                    else
+                    {
+                        context.TblKhachHangs.Remove(pro);
+
+                        if (context.SaveChanges() > 0)
+                        {
+                            MessageBox.Show("Xóa thành công");
+                            loadData();
+                        }
+                    }
+                    
                 }
             }
             else

@@ -122,5 +122,13 @@ namespace QuanLiBanHang
             a.ShowDialog();
             this.Close();
         }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            LichSu a = new LichSu();
+            a.ShowDialog();
+            this.Close();
+        }
     }
 }
