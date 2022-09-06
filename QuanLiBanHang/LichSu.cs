@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -20,6 +21,11 @@ namespace QuanLiBanHang
 
         private void LichSu_Load(object sender, EventArgs e)
         {
+            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dateTimePicker2.Value = DateTime.Now;
+            dateTimePicker1.MinDate = new DateTime(1990, 1, 1);
+            dateTimePicker1.Value = dateTimePicker1.MinDate;
             loadData();
         }
 
@@ -27,6 +33,7 @@ namespace QuanLiBanHang
         {
             using (MyOrderContext context = new MyOrderContext())
             {
+                comboBox1.Items.Add("All");
                 this.BackColor = Color.DarkOrange;
                 var data = context.TblMatHangs.ToList();
                 foreach (TblMatHang item in data)
@@ -54,9 +61,25 @@ namespace QuanLiBanHang
 
         private void comboBox1_TextChanged(object sender, EventArgs e)
         {
-            textBox2.Text = "";
-            using (MyOrderContext context = new MyOrderContext())
+            MyOrderContext context = new MyOrderContext();
+            if (comboBox1.Text.Equals("All"))
             {
+                textBox2.Text = "";
+                var data = context.TblChiTietHds.ToList().
+                    Select(item => new
+                    {
+                        MaHoaDon = item.MaHd,
+                        TenHang = tenMH(item),
+                        SoLuong = item.SoLuong,
+                        MaHang = item.MaHang,
+                        MaChiTiet = item.MaChiTietHd,
+                        NgayDat = NgayDat(item).Day + "/" + NgayDat(item).Month + "/" + NgayDat(item).Year
+                    }).ToList();
+                dataGridView1.DataSource = data;
+            }
+            else
+            {
+                textBox2.Text = "";
                 var data = context.TblChiTietHds.ToList().
                     Where(p => p.MaHang.Equals(comboBox1.Text)).ToList().
                     Select(item => new
@@ -65,30 +88,13 @@ namespace QuanLiBanHang
                         TenHang = tenMH(item),
                         SoLuong = item.SoLuong,
                         MaHang = item.MaHang,
-                        MaChiTiet = item.MaChiTietHd
+                        MaChiTiet = item.MaChiTietHd,
+                        NgayDat = NgayDat(item).Day + "/" + NgayDat(item).Month + "/" + NgayDat(item).Year
                     }).ToList();
                 dataGridView1.DataSource = data;
-                for (int i = 0; i < context.TblChiTietHds.ToList().Count; i++)
-                {
-                    if (context.TblChiTietHds.ToList()[i].MaHang.Equals(comboBox1.Text))
-                    {
-                        context.TblChiTietHds.Remove(context.TblChiTietHds.ToList()[i]);
-                    }
-                }
-                comboBox1.Items.Clear();
-                loadData();
-                for (int i = 0; i < context.TblHoadons.ToList().Count; i++)
-                {
-                    if (!coChiTiet(Convert.ToInt32(context.TblHoadons.ToList()[i].MaHd)))
-                    {
-                        context.TblHoadons.Remove(context.TblHoadons.ToList()[i]);
-                    }
-                }
-                context.SaveChanges();
             }
         }
-
-        private object tenMH(TblChiTietHd item)
+        private string tenMH(TblChiTietHd item)
         {
             using (MyOrderContext context = new MyOrderContext())
             {
@@ -106,64 +112,135 @@ namespace QuanLiBanHang
 
         private void textBox2_TextChanged(object sender, EventArgs e)
         {
-            comboBox1.Text = "";
             MyOrderContext context = new MyOrderContext();
-            var data = context.TblChiTietHds.ToList().
-                    Where(p => tenMH(p).Equals(textBox2.Text)).ToList().
+            if (textBox2.Text.Length == 0)
+            {
+                var data = context.TblChiTietHds.ToList().
                     Select(item => new
                     {
                         MaHoaDon = item.MaHd,
                         TenHang = tenMH(item),
                         SoLuong = item.SoLuong,
                         MaHang = item.MaHang,
-                        MaChiTiet = item.MaChiTietHd
+                        MaChiTiet = item.MaChiTietHd,
+                        NgayDat = NgayDat(item).Day + "/" + NgayDat(item).Month + "/" + NgayDat(item).Year
                     }).ToList();
-            dataGridView1.DataSource = data;
-            string maMH = "";
-            foreach (TblMatHang item in context.TblMatHangs.ToList())
-            {
-                if (item.TenHang.Equals(textBox2.Text))
-                {
-                    maMH = item.MaHang;
-                    break;
-                }
+                dataGridView1.DataSource = data;
             }
-            for (int i = 0; i < context.TblChiTietHds.ToList().Count; i++)
+            else
             {
-                if (context.TblChiTietHds.ToList()[i].MaHang.Equals(maMH))
-                {
-                    
-                    context.TblChiTietHds.Remove(context.TblChiTietHds.ToList()[i]);
-                }
+                var data = context.TblChiTietHds.ToList().
+                        Where(p => tenMH(p).ToLower().Replace(" ", "").
+                        Contains(textBox2.Text.ToLower().Replace(" ", ""))).ToList().
+                        Select(item => new
+                        {
+                            MaHoaDon = item.MaHd,
+                            TenHang = tenMH(item),
+                            SoLuong = item.SoLuong,
+                            MaHang = item.MaHang,
+                            MaChiTiet = item.MaChiTietHd,
+                            NgayDat = NgayDat(item).Day + "/" + NgayDat(item).Month + "/" + NgayDat(item).Year
+                        }).ToList();
+                dataGridView1.DataSource = data;
             }
-            comboBox1.Items.Clear();
-            loadData();
-            for (int i = 0; i < context.TblHoadons.ToList().Count; i++)
-            {
-                if (!coChiTiet(Convert.ToInt32(context.TblHoadons.ToList()[i].MaHd)))
-                {
-                    context.TblHoadons.Remove(context.TblHoadons.ToList()[i]);
-                }
-            }
-            context.SaveChanges();
         }
 
-        public bool coChiTiet(int maHD)
+        private void textBox2_Click(object sender, EventArgs e)
+        {
+            comboBox1.Text = "All";
+        }
+
+        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
+        {
+            textBox2.Text = "";
+            if (dateTimePicker1.Value > dateTimePicker2.Value)
+            {
+                dataGridView1.DataSource = null;
+                dataGridView1.Rows.Clear();
+            }
+            else
+            {
+                MyOrderContext context = new MyOrderContext();
+                var data = context.TblChiTietHds.ToList().
+                    Where(p => NgayDat(p) >= dateTimePicker1.Value &&
+                    NgayDat(p) < dateTimePicker2.Value).ToList().
+                    Select(item => new
+                    {
+                        MaHoaDon = item.MaHd,
+                        TenHang = tenMH(item),
+                        SoLuong = item.SoLuong,
+                        MaHang = item.MaHang,
+                        MaChiTiet = item.MaChiTietHd,
+                        NgayDat = NgayDat(item).Day + "/" + NgayDat(item).Month + "/" + NgayDat(item).Year
+                    }).ToList();
+                dataGridView1.DataSource = data;
+            }
+        }
+
+        public DateTime NgayDat(TblChiTietHd a)
         {
             MyOrderContext context = new MyOrderContext();
-            List<int> list = new List<int>();
-            foreach (TblHoadon item in context.TblHoadons)
+            var data = context.TblHoadons.ToList().
+                Where(p => p.MaHd == a.MaHd).ToList();
+            return data[0].NgayHd;
+        }
+
+        private void dateTimePicker2_ValueChanged(object sender, EventArgs e)
+        {
+            textBox2.Text = "";
+            if (dateTimePicker1.Value > dateTimePicker2.Value)
             {
-                list.Add(Convert.ToInt32(item.MaHd));
+                dataGridView1.DataSource = null;
+                dataGridView1.Rows.Clear();
             }
-            foreach (TblChiTietHd item in context.TblChiTietHds.ToList())
+            else
             {
-                if (item.MaHd==maHD)
+                MyOrderContext context = new MyOrderContext();
+                var data = context.TblChiTietHds.ToList().
+                    Where(p => NgayDat(p) >= dateTimePicker1.Value &&
+                    NgayDat(p) < dateTimePicker2.Value).ToList().
+                    Select(item => new
+                    {
+                        MaHoaDon = item.MaHd,
+                        TenHang = tenMH(item),
+                        SoLuong = item.SoLuong,
+                        MaHang = item.MaHang,
+                        MaChiTiet = item.MaChiTietHd,
+                        NgayDat = NgayDat(item).Day + "/" + NgayDat(item).Month + "/" + NgayDat(item).Year
+                    }).ToList();
+                dataGridView1.DataSource = data;
+            }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Bạn có chắc muốn in báo cáo?", "Alert", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                SaveFileDialog a = new SaveFileDialog();
+                a.Filter = "Data Files (*.dat|(*.txt)";
+                a.DefaultExt = "dat";
+                a.FileName = "dat";
+                if (a.ShowDialog() == DialogResult.OK)
                 {
-                    return true;
+                    string path = a.FileName;
+                    StreamWriter writer = new StreamWriter(path);
+                    for (int i = 0; i < dataGridView1.Rows.Count; i++)
+                    {
+                        for (int j = 0; j < dataGridView1.Columns.Count - 1; j++)
+                        {
+                            writer.Write("\t" + dataGridView1.Rows[i].Cells[j].Value.ToString() + "\t" + "|");
+                        }
+                        writer.WriteLine("");
+                        writer.WriteLine("----------------------------------------------------------");
+                    }
+                    writer.Close();
+                    MessageBox.Show("In báo cáo thành công");
+                }
+                else
+                {
+                    MessageBox.Show("Đã hủy in báo cáo");
                 }
             }
-            return false;
         }
     }
 }
