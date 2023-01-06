@@ -8,12 +8,21 @@
     ".NETCoreApp,Version=v5.0": {
       "QuanLiBanHang/1.0.0": {
         "dependencies": {
+          "Diacritics": "3.3.14",
           "Microsoft.EntityFrameworkCore.Design": "5.0.17",
           "Microsoft.EntityFrameworkCore.SqlServer": "5.0.17",
           "Microsoft.Extensions.Configuration.Json": "6.0.0"
         },
         "runtime": {
           "QuanLiBanHang.dll": {}
+        }
+      },
+      "Diacritics/3.3.14": {
+        "runtime": {
+          "lib/netstandard2.1/Diacritics.dll": {
+            "assemblyVersion": "3.3.14.0",
+            "fileVersion": "3.3.14.0"
+          }
         }
       },
       "Humanizer.Core/2.8.26": {
@@ -1102,6 +1111,13 @@
       "type": "project",
       "serviceable": false,
       "sha512": ""
+    },
+    "Diacritics/3.3.14": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-+niHopkfVAmg1pUau2UIzZ5GLNOPDm6X9EwNfMIMacPCsU0qFM17Cfi3oprL7frohAEZOtu1h6NAHmJfy/RcLQ==",
+      "path": "diacritics/3.3.14",
+      "hashPath": "diacritics.3.3.14.nupkg.sha512"
     },
     "Humanizer.Core/2.8.26": {
       "type": "package",

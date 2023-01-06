@@ -6,8 +6,10 @@ using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Diacritics.Extensions;
 using QuanLiBanHang.Models;
 
 namespace QuanLiBanHang
@@ -217,21 +219,32 @@ namespace QuanLiBanHang
             if (MessageBox.Show("Bạn có chắc muốn in báo cáo?", "Alert", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
                 SaveFileDialog a = new SaveFileDialog();
-                a.Filter = "Data Files (*.dat|(*.txt)";
+                a.Filter = "Data Files (*.dat)|(*.txt";
                 a.DefaultExt = "dat";
                 a.FileName = "dat";
+                
                 if (a.ShowDialog() == DialogResult.OK)
                 {
                     string path = a.FileName;
+                    int space = 20;
+                    string DownLine = "";
+                    for (int k = 0; k < space * 5 + 5; k++)
+                    {
+                        DownLine += "-";
+                    }
                     StreamWriter writer = new StreamWriter(path);
+                    writer.WriteLine(AlignWord("Mã hóa đơn", space)+"|"+AlignWord("Tên hàng", space)+"|"
+                                              +AlignWord("Số lượng", space)+"|"+AlignWord("Mã hàng", space)+"|"
+                                              +AlignWord("Mã chi tiết", space)+"|");
+                    writer.WriteLine(DownLine);
                     for (int i = 0; i < dataGridView1.Rows.Count; i++)
                     {
                         for (int j = 0; j < dataGridView1.Columns.Count - 1; j++)
                         {
-                            writer.Write("\t" + dataGridView1.Rows[i].Cells[j].Value.ToString() + "\t" + "|");
+                            writer.Write(AlignWord(dataGridView1.Rows[i].Cells[j].Value.ToString().Trim(), space) + "|");
                         }
                         writer.WriteLine("");
-                        writer.WriteLine("----------------------------------------------------------");
+                        writer.WriteLine(DownLine);
                     }
                     writer.Close();
                     MessageBox.Show("In báo cáo thành công");
@@ -241,6 +254,34 @@ namespace QuanLiBanHang
                     MessageBox.Show("Đã hủy in báo cáo");
                 }
             }
+        }
+
+        public string AlignWord(string word, int space)
+        {
+            string str = LatinToAscii(word);
+            int Space = space - str.Length;
+            string Start = "";
+            string End = "";
+            for (int i = 0; i < Space/2; i++)
+            {
+                Start += " ";
+                End += " ";
+            }
+            if (Space % 2 == 1)
+            {
+                End += " ";
+            }
+            return Start + word + End;
+        }
+
+        //function to convert from Vietnamese to ASCII string
+        private string LatinToAscii(string inString)
+        {
+            var newStringBuilder = new StringBuilder();
+            newStringBuilder.Append(inString.Normalize(NormalizationForm.FormKD)
+                                            .Where(x => x < 128)
+                                            .ToArray());
+            return newStringBuilder.ToString();
         }
     }
 }

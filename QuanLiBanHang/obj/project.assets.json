@@ -2,6 +2,15 @@
   "version": 3,
   "targets": {
     "net5.0-windows7.0": {
+      "Diacritics/3.3.14": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.1/Diacritics.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.1/Diacritics.dll": {}
+        }
+      },
       "Humanizer.Core/2.8.26": {
         "type": "package",
         "compile": {
@@ -1649,6 +1658,22 @@
     }
   },
   "libraries": {
+    "Diacritics/3.3.14": {
+      "sha512": "+niHopkfVAmg1pUau2UIzZ5GLNOPDm6X9EwNfMIMacPCsU0qFM17Cfi3oprL7frohAEZOtu1h6NAHmJfy/RcLQ==",
+      "type": "package",
+      "path": "diacritics/3.3.14",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "README.md",
+        "diacritics.3.3.14.nupkg.sha512",
+        "diacritics.nuspec",
+        "lib/net45/Diacritics.dll",
+        "lib/netstandard1.2/Diacritics.dll",
+        "lib/netstandard2.0/Diacritics.dll",
+        "lib/netstandard2.1/Diacritics.dll"
+      ]
+    },
     "Humanizer.Core/2.8.26": {
       "sha512": "OiKusGL20vby4uDEswj2IgkdchC1yQ6rwbIkZDVBPIR6al2b7n3pC91elBul9q33KaBgRKhbZH3+2Ur4fnWx2A==",
       "type": "package",
@@ -6129,6 +6154,7 @@
   },
   "projectFileDependencyGroups": {
     "net5.0-windows7.0": [
+      "Diacritics >= 3.3.14",
       "Microsoft.EntityFrameworkCore.Design >= 5.0.17",
       "Microsoft.EntityFrameworkCore.SqlServer >= 5.0.17",
       "Microsoft.Extensions.Configuration.Json >= 6.0.0"
@@ -6173,6 +6199,10 @@
       "net5.0-windows7.0": {
         "targetAlias": "net5.0-windows",
         "dependencies": {
+          "Diacritics": {
+            "target": "Package",
+            "version": "[3.3.14, )"
+          },
           "Microsoft.EntityFrameworkCore.Design": {
             "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
             "suppressParent": "All",

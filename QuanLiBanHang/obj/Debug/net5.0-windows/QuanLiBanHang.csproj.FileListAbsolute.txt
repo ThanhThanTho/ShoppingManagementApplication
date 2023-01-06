@@ -70,3 +70,4 @@ D:\VisualStudio\Project_BL5\QuanLiBanHang\obj\Debug\net5.0-windows\QuanLiBanHang
 D:\VisualStudio\Project_BL5\QuanLiBanHang\obj\Debug\net5.0-windows\QuanLiBanHang.DatHang.resources
 D:\VisualStudio\Project_BL5\QuanLiBanHang\obj\Debug\net5.0-windows\QuanLiBanHang.csproj.AssemblyReference.cache
 D:\VisualStudio\Project_BL5\QuanLiBanHang\obj\Debug\net5.0-windows\QuanLiBanHang.LichSu.resources
+D:\VisualStudio\Project_BL5\QuanLiBanHang\bin\Debug\net5.0-windows\Diacritics.dll

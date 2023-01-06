@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "eJ5Z6ij2XD1NQOzwEgGaiURjg754r9xtNv4a58xRnvtRYlZzcsQCyF7xoPpcHuUy0dV6W16Ehb7zMbTBxcsbwA==",
+  "dgSpecHash": "FJzWyVnfDKMr4g0lHj+5y9dZTsskwePiMITWRno4W2dsNgiUtPbGCQT+1vCkSc1DTsc2JWaGoURYy4NEpfCpcw==",
   "success": true,
   "projectFilePath": "D:\\VisualStudio\\Project_BL5\\QuanLiBanHang\\QuanLiBanHang.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\NAC\\.nuget\\packages\\diacritics\\3.3.14\\diacritics.3.3.14.nupkg.sha512",
     "C:\\Users\\NAC\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\NAC\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
     "C:\\Users\\NAC\\.nuget\\packages\\microsoft.data.sqlclient\\2.0.1\\microsoft.data.sqlclient.2.0.1.nupkg.sha512",
